@@ -4,12 +4,6 @@ import { useState } from "react";
 import FormShell from "./FormShell";
 import styles from "./forms.module.css";
 
-/**
- * Scroll 4 — Agency path form.
- * Fields: Name, Email, Company Name, dropdown (Label/Agency/Management/Other).
- * Submit: "Request Access". No upload fields (per brief).
- */
-
 type AgencyFormProps = {
   onBack: () => void;
 };
@@ -21,7 +15,6 @@ export default function AgencyForm({ onBack }: AgencyFormProps) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Wiring to a backend/endpoint is out of scope for this delivery.
     setSubmitted(true);
   };
 

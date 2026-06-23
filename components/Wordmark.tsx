@@ -1,17 +1,7 @@
 import styles from "./Wordmark.module.css";
 
-/**
- * CUTSTAR wordmark.
- * Barlow Condensed 500, wide tracking, white on dark.
- * Brief: letters should have a slightly misaligned / distorted baseline —
- * NOT perfectly aligned. Offsets are deterministic (fixed per letter), so the
- * effect is identical on every render. Tune the arrays below to taste.
- */
-
 const LETTERS = ["C", "U", "T", "S", "T", "A", "R"] as const;
 
-// Per-letter vertical offset (em) and micro-rotation (deg) — hand-tuned,
-// subtle, and intentionally irregular.
 const OFFSETS_Y = [0, 0.05, -0.035, 0.07, -0.02, 0.045, -0.055];
 const ROTATIONS = [-1.2, 0.8, -0.6, 1.4, -0.9, 0.5, -1.1];
 

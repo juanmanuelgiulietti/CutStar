@@ -3,13 +3,6 @@
 import { motion, type Variants } from "framer-motion";
 import styles from "./ChooseYourPath.module.css";
 
-/**
- * Scroll 3 — Choose Your Path.
- * Two cards side by side. Locked copy per brief.
- * `onSelect` is wired in Entrega 4: clicking a card's CTA replaces both cards
- * with that path's form. For now it is optional so the section stands alone.
- */
-
 export type PathId = "artist" | "agency";
 
 type ChooseYourPathProps = {

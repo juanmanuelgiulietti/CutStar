@@ -5,13 +5,6 @@ import FormShell from "./FormShell";
 import DropZone from "./DropZone";
 import styles from "./forms.module.css";
 
-/**
- * Scroll 4 — Artist / creator path form.
- * Fields: Name, Email, Artist/Project Name, Upload song, Upload footage (max 2).
- * Submit: "Send It".
- * Uploads are polished drag-and-drop zones (DropZone), not default file inputs.
- */
-
 type ArtistFormProps = {
   onBack: () => void;
 };
@@ -29,7 +22,7 @@ export default function ArtistForm({ onBack }: ArtistFormProps) {
       return;
     }
     setFormError(null);
-    // Wiring to a backend/endpoint is out of scope for this delivery.
+
     setSubmitted(true);
   };
 

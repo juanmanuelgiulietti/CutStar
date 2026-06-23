@@ -28,8 +28,6 @@
   letter-spacing: -0.01em;
 }
 
-/* Three columns, but each card is offset vertically (inline style) to break
-   the flat grid into an editorial, asymmetric stagger. */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,7 +51,6 @@
   transform: translateY(-4px);
 }
 
-/* Vertical (9:16) video placeholder */
 .thumb {
   position: relative;
   width: 100%;

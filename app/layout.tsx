@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 
-/* Wordmark + display font — Barlow Condensed, weight 500 per brief. */
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -10,7 +9,6 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-/* Body/UI font — neutral grotesque to keep the editorial, premium feel. */
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",

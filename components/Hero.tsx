@@ -5,13 +5,6 @@ import StarLogo from "./StarLogo";
 import Wordmark from "./Wordmark";
 import styles from "./Hero.module.css";
 
-/**
- * Scroll 1 — Hero.
- * No nav bar. Semi-transparent star behind the headline (slow pulse).
- * Copy is locked, in the size hierarchy defined by the brief.
- * Elements fade/scale in as the section mounts in the viewport.
- */
-
 const container: Variants = {
   hidden: {},
   show: {
@@ -32,7 +25,6 @@ const rise: Variants = {
 export default function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-headline">
-      {/* Ambient violet wash for depth */}
       <div
         className="ambient-glow"
         style={{
@@ -46,7 +38,6 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Star logo behind the headline */}
       <StarLogo className={styles.star} />
 
       <motion.div

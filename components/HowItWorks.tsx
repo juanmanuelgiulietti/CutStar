@@ -3,17 +3,10 @@
 import { motion, type Variants } from "framer-motion";
 import styles from "./HowItWorks.module.css";
 
-/**
- * Scroll 2 — How It Works.
- * Three video-placeholder cards, staggered asymmetrically (not a flat grid),
- * each a visibly styled card. Cards fade/scale in as they enter the viewport.
- */
-
 type Step = {
   index: string;
   title: string;
   body: string;
-  /** vertical offset (rem) to break the grid into an editorial stagger */
   offset: number;
 };
 

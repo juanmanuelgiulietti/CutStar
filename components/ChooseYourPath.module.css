@@ -53,7 +53,6 @@
   border-color: rgba(124, 92, 252, 0.4);
 }
 
-/* Primary path gets a subtle accent wash to set the visual hierarchy */
 .cardPrimary {
   border-color: rgba(124, 92, 252, 0.35);
   background: radial-gradient(
@@ -85,7 +84,6 @@
   max-width: 34ch;
 }
 
-/* CTA buttons — the place where accent violet is used deliberately */
 .cta {
   align-self: flex-start;
   display: inline-flex;

@@ -3,11 +3,6 @@
 import type { ReactNode } from "react";
 import styles from "./forms.module.css";
 
-/**
- * Shared chrome for both path forms: section wrapper, small X/back control,
- * heading, and the locked review note shown below both forms.
- */
-
 type FormShellProps = {
   title: string;
   subtitle: string;

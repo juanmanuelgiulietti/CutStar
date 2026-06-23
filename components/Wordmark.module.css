@@ -4,7 +4,6 @@
   font-family: var(--font-display), "Barlow Condensed", sans-serif;
   font-weight: 500;
   letter-spacing: 0.22em;
-  /* trim the trailing tracking so the mark stays optically centered */
   padding-left: 0.22em;
   line-height: 1;
   color: var(--color-text);

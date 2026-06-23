@@ -7,7 +7,6 @@ export default function Home() {
     <main>
       <Hero />
       <HowItWorks />
-      {/* Scroll 3 + 4: cards swap to the selected path's form on click */}
       <PathSwitcher />
     </main>
   );

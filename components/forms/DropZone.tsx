@@ -3,16 +3,9 @@
 import { useId, useRef, useState } from "react";
 import styles from "./forms.module.css";
 
-/**
- * Polished drag-and-drop upload zone (not a default file input).
- * Controlled: parent owns the file list. Supports drag states, click-to-browse,
- * keyboard activation, type + count validation, and removable file chips.
- */
-
 export type DropZoneProps = {
   label: string;
   hint?: string;
-  /** accept attribute, e.g. "audio/*" or "video/*,.mov" */
   accept: string;
   maxFiles: number;
   files: File[];

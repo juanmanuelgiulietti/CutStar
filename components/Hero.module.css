@@ -9,8 +9,6 @@
   isolation: isolate;
 }
 
-/* Semi-transparent star sits behind the headline, large, off to the right
-   for an asymmetric composition. */
 .star {
   position: absolute;
   z-index: 0;
@@ -29,7 +27,6 @@
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
-  /* asymmetric: copy hugs the left, leaving negative space on the right */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
