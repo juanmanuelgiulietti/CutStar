@@ -1,0 +1,122 @@
+.section {
+  position: relative;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--section-pad-y) var(--gutter);
+}
+
+.header {
+  margin-bottom: clamp(3rem, 7vh, 5rem);
+  max-width: 40ch;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.25rem, 3.6vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+}
+
+/* Three columns, but each card is offset vertically (inline style) to break
+   the flat grid into an editorial, asymmetric stagger. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  align-items: start;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 18px;
+  padding: 1rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.card:hover {
+  border-color: rgba(124, 92, 252, 0.45);
+  transform: translateY(-4px);
+}
+
+/* Vertical (9:16) video placeholder */
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  background: radial-gradient(
+      120% 80% at 50% 0%,
+      rgba(124, 92, 252, 0.18),
+      transparent 60%
+    ),
+    #101019;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratio {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-faint);
+}
+
+.play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--color-text);
+  backdrop-filter: blur(2px);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0.25rem;
+}
+
+.index {
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.stepTitle {
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+
+.stepBody {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
