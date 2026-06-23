@@ -1,0 +1,71 @@
+:root {
+  /* Color tokens */
+  --color-bg: #0a0a0f;
+  --color-accent: #7c5cfc;
+  --color-accent-soft: rgba(124, 92, 252, 0.16);
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.56);
+  --color-text-faint: rgba(255, 255, 255, 0.4);
+  --color-surface: #1a1a24;
+  --color-surface-border: rgba(255, 255, 255, 0.08);
+
+  /* Type scale (desktop) */
+  --fs-headline: clamp(3.25rem, 5.6vw, 5.75rem);
+  --fs-subhead: clamp(1.25rem, 1.7vw, 1.6rem);
+  --fs-body: clamp(1rem, 1.15vw, 1.15rem);
+  --fs-credibility: 0.9rem;
+
+  /* Spacing / layout */
+  --maxw: 1180px;
+  --section-pad-y: clamp(6rem, 12vh, 11rem);
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

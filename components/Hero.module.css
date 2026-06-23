@@ -1,0 +1,84 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--section-pad-y) var(--gutter);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Semi-transparent star sits behind the headline, large, off to the right
+   for an asymmetric composition. */
+.star {
+  position: absolute;
+  z-index: 0;
+  width: clamp(420px, 46vw, 760px);
+  height: auto;
+  top: 50%;
+  right: clamp(-80px, -2vw, 40px);
+  transform: translateY(-50%);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  /* asymmetric: copy hugs the left, leaving negative space on the right */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-inline-size: min(720px, 62%);
+}
+
+.brandRow {
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+}
+
+.wordmark {
+  font-size: clamp(1.05rem, 1.5vw, 1.5rem);
+  opacity: 0.92;
+}
+
+.headline {
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-headline);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin-bottom: clamp(1.25rem, 2.5vh, 1.75rem);
+}
+
+.subhead {
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: var(--fs-subhead);
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+  opacity: 0.86;
+  margin-bottom: clamp(1.75rem, 3.5vh, 2.5rem);
+}
+
+.body {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  opacity: 0.78;
+  max-width: 56ch;
+  margin-bottom: clamp(1.75rem, 3.5vh, 2.5rem);
+}
+
+.credibility {
+  font-size: var(--fs-credibility);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-accent-soft);
+}

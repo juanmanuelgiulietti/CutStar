@@ -1,0 +1,20 @@
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  /* trim the trailing tracking so the mark stays optically centered */
+  padding-left: 0.22em;
+  line-height: 1;
+  color: var(--color-text);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.letter {
+  display: inline-block;
+  transform: translateY(var(--ty)) rotate(var(--rot));
+  transform-origin: center 70%;
+  will-change: transform;
+}
