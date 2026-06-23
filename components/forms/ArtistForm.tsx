@@ -2,16 +2,14 @@
 
 import { useState } from "react";
 import FormShell from "./FormShell";
+import DropZone from "./DropZone";
 import styles from "./forms.module.css";
 
 /**
  * Scroll 4 — Artist / creator path form.
  * Fields: Name, Email, Artist/Project Name, Upload song, Upload footage (max 2).
  * Submit: "Send It".
- *
- * NOTE (Entrega 4a): text fields are complete here. The "Upload song" and
- * "Upload footage" polished drag-and-drop zones are stubbed below and will be
- * implemented in Entrega 4b.
+ * Uploads are polished drag-and-drop zones (DropZone), not default file inputs.
  */
 
 type ArtistFormProps = {
@@ -20,9 +18,18 @@ type ArtistFormProps = {
 
 export default function ArtistForm({ onBack }: ArtistFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [song, setSong] = useState<File[]>([]);
+  const [footage, setFootage] = useState<File[]>([]);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (song.length === 0) {
+      setFormError("Please add your song before sending.");
+      return;
+    }
+    setFormError(null);
+    // Wiring to a backend/endpoint is out of scope for this delivery.
     setSubmitted(true);
   };
 
@@ -94,12 +101,30 @@ export default function ArtistForm({ onBack }: ArtistFormProps) {
             />
           </div>
 
-          {/* Entrega 4b: replace with polished drag-and-drop upload zones
-              (Upload song — 1 file; Upload footage — max 2 files). */}
-          <div className={styles.uploadPlaceholder} aria-hidden="true">
-            Upload song &amp; footage — drag-and-drop zones arrive in the next
-            update.
-          </div>
+          <DropZone
+            label="Upload song"
+            hint="MP3, WAV or similar — one track"
+            accept="audio/*"
+            maxFiles={1}
+            files={song}
+            onChange={setSong}
+            required
+          />
+
+          <DropZone
+            label="Upload footage"
+            hint="Video clips — up to 2 files"
+            accept="video/*"
+            maxFiles={2}
+            files={footage}
+            onChange={setFootage}
+          />
+
+          {formError ? (
+            <p className={styles.fieldError} role="alert">
+              {formError}
+            </p>
+          ) : null}
 
           <button type="submit" className={styles.submit}>
             Send It
